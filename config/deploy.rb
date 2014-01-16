@@ -3,19 +3,15 @@ lock '3.1.0'
 
 set :application, 'botanicmap'
 set :repo_url, 'git@github.com:Traf333/botanicmap.git'
-set :user, 'plantner'
-set :deploy_to, "/home/#{user}/apps/#{application}"
-set :deploy_via, :remote_cache
-set :use_sudo, false
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory is /var/www/my_app
-# set :deploy_to, '/var/www/my_app'
+set :deploy_to, "/home/plantner/apps/#{application}"
 
 # Default value for :scm is :git
-# set :scm, :git
+set :scm, :git
 
 # Default value for :format is :pretty
 # set :format, :pretty
@@ -39,7 +35,6 @@ set :pty, true
 set :keep_releases, 5
 
 namespace :deploy do
-
   %w[start stop restart].each do |command|
     desc "#{command} unicorn server"
     task command, roles: :app, except: {no_release: true} do

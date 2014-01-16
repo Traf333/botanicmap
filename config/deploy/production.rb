@@ -4,9 +4,9 @@
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
 # Don't declare `role :all`, it's a meta role
-role :app, %w{plantner@botanicmap.ru}
-role :web, %w{plantner@botanicmap.ru}
-role :db,  %w{plantner@botanicmap.ru}
+role :app, %w{plantner@botanicmap.com}
+role :web, %w{plantner@botanicmap.com}
+role :db,  %w{plantner@botanicmap.com}
 
 # Extended Server Syntax
 # ======================
@@ -14,7 +14,7 @@ role :db,  %w{plantner@botanicmap.ru}
 # definition into the server list. The second argument
 # something that quacks like a hash can be used to set
 # extended properties on the server.
-server 'botanicmap.ru', user: 'plantner', roles: %w{web app}
+server 'botanicmap.com', user: 'plantner', roles: %w{web app}, my_property: :my_value
 
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options
@@ -26,7 +26,7 @@ server 'botanicmap.ru', user: 'plantner', roles: %w{web app}
 #    auth_methods: %w(password)
 #  }
 # and/or per server
-# server 'botanicmap.ru',
+# server 'botanicmap.com',
 #   user: 'user_name',
 #   roles: %w{web app},
 #   ssh_options: {
